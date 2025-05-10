@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑龙江省哈尔滨市斑马线传媒有限公司</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#FF7D00',
+            dark: '#1D2129',
+            light: '#F5F7FA',
+            gray: {
+              100: '#F2F3F5',
+              200: '#E5E6EB',
+              300: '#C9CDD4',
+              400: '#86909C',
+              500: '#4E5969',
+              600: '#272E3B',
+              700: '#1D2129',
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+      }
+      .btn-primary {
+        @apply bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-primary/30;
+      }
+      .btn-secondary {
+        @apply bg-white hover:bg-gray-50 text-primary border border-primary font-medium py-3 px-6 rounded-lg transition-all duration-300;
+      }
+      .input-field {
+        @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .badge {
+        @apply text-xs px-2.5 py-0.5 rounded-full font-medium;
+      }
+    }
+  </style>
+</head>
+<body class="font-inter bg-light text-gray-700 antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <a href="#" class="flex items-center space-x-2">
+          <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+            <i class="fa fa-paint-brush text-white text-2xl"></i>
+          </div>
+          <span class="text-xl font-bold text-gray-800">斑马线传媒</span>
+        </a>
+        
+        <!-- 桌面导航 -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="font-medium hover:text-primary transition-colors">公司简介</a>
+          <a href="#services" class="font-medium hover:text-primary transition-colors">服务项目</a>
+          <a href="#cases" class="font-medium hover:text-primary transition-colors">案例展示</a>
+          <a href="#contact" class="font-medium hover:text-primary transition-colors">联系我们</a>
+          <button class="btn-primary">
+            <i class="fa fa-phone mr-2"></i>立即咨询
+          </button>
+        </nav>
+        
+        <!-- 移动端菜单按钮 -->
+        <button id="menu-toggle" class="md:hidden text-gray-800 hover:text-primary">
+          <i class="fa fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="container mx-auto px-4 py-3 space-y-3">
+        <a href="#about" class="block py-2 font-medium hover:text-primary transition-colors">公司简介</a>
+        <a href="#services" class="block py-2 font-medium hover:text-primary transition-colors">服务项目</a>
+        <a href="#cases" class="block py-2 font-medium hover:text-primary transition-colors">案例展示</a>
+        <a href="#contact" class="block py-2 font-medium hover:text-primary transition-colors">联系我们</a>
+        <button class="w-full btn-primary">
+          <i class="fa fa-phone mr-2"></i>立即咨询
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-primary to-primary/80 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight mb-6">
+            创意无限<br>传播未来
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl">
+            黑龙江省哈尔滨市斑马线传媒有限公司，专注于为企业提供全方位的品牌策划、创意设计和数字营销解决方案，助力企业品牌价值提升。
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button class="btn-primary bg-white text-primary hover:bg-gray-100">
+              <i class="fa fa-rocket mr-2"></i>了解服务
+            </button>
+            <button class="btn-secondary border-white text-white hover:bg-white/10">
+              <i class="fa fa-play-circle mr-2"></i>观看视频
+            </button>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <img src="https://picsum.photos/600/400?random=1" alt="创意设计团队" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+          <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                <i class="fa fa-trophy text-xl"></i>
+              </div>
+              <div>
+                <p class="text-gray-800 font-semibold">100+</p>
+                <p class="text-gray-500 text-sm">行业奖项</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                <i class="fa fa-users text-xl"></i>
+              </div>
+              <div>
+                <p class="text-gray-800 font-semibold">500+</p>
+                <p class="text-gray-500 text-sm">企业客户</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 公司简介 -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="https://picsum.photos/600/400?random=2" alt="公司办公环境" class="rounded-xl shadow-lg w-full h-auto object-cover">
+        </div>
+        <div>
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-6">公司简介</h2>
+          <p class="text-gray-600 mb-6">
+            黑龙江省哈尔滨市斑马线传媒有限公司成立于2010年，是一家专注于创意设计、品牌推广、数字营销等领域的综合性传媒公司。公司拥有一支充满激情和创造力的团队，致力于为客户提供优质的服务和解决方案。
+          </p>
+          <p class="text-gray-600 mb-8">
+            多年来，我们服务了众多客户，积累了丰富的经验，帮助客户提升品牌形象，实现业务增长。我们的使命是通过创新的思维和专业的服务，为客户创造更大的价值。
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                <i class="fa fa-lightbulb-o"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">创意理念</h3>
+                <p class="text-gray-600 text-sm">创新思维，打破常规，为客户带来独特的创意解决方案</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                <i class="fa fa-bullseye"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">服务宗旨</h3>
+                <p class="text-gray-600 text-sm">以客户为中心，提供专业、高效、优质的服务体验</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                <i class="fa fa-line-chart"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">专业团队</h3>
+                <p class="text-gray-600 text-sm">拥有多年行业经验的专业人才，为客户提供全方位支持</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                <i class="fa fa-handshake-o"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">合作模式</h3>
+                <p class="text-gray-600 text-sm">灵活多样的合作模式，满足不同客户的需求和预算</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-center space-x-6">
+            <div class="text-center">
+              <p class="text-3xl font-bold text-primary mb-1">15+</p>
+              <p class="text-gray-500 text-sm">年行业经验</p>
+            </div>
+            <div class="w-px h-10 bg-gray-200"></div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-primary mb-1">50+</p>
+              <p class="text-gray-500 text-sm">专业团队</p>
+            </div>
+            <div class="w-px h-10 bg-gray-200"></div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-primary mb-1">500+</p>
+              <p class="text-gray-500 text-sm">成功案例</p>
+            </div>
+            <div class="w-px h-10 bg-gray-200"></div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-primary mb-1">98%</p>
+              <p class="text-gray-500 text-sm">客户满意度</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务项目 -->
+  <section id="services" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">服务项目</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">我们提供全方位的创意设计和营销解决方案，满足企业不同阶段的发展需求</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="relative h-48">
+            <img src="https://picsum.photos/600/400?random=3" alt="创意设计" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-bold text-xl">创意设计</h3>
+              <p class="text-white/80 text-sm">打造独特视觉形象</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">我们提供专业的平面设计、UI设计、包装设计等服务，为客户打造独特的视觉形象，提升品牌价值。</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                品牌视觉识别系统设计
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                宣传册与海报设计
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                包装设计与印刷
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                UI/UX设计
+              </li>
+            </ul>
+            <button class="w-full py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+              了解详情
+            </button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="relative h-48">
+            <img src="https://picsum.photos/600/400?random=4" alt="品牌推广" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-bold text-xl">品牌推广</h3>
+              <p class="text-white/80 text-sm">提升品牌知名度</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">我们制定全面的品牌策略，通过多种渠道进行品牌传播，提升品牌知名度和美誉度，树立良好的品牌形象。</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                品牌定位与策略规划
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                品牌传播与推广
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                活动策划与执行
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                公关关系管理
+              </li>
+            </ul>
+            <button class="w-full py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+              了解详情
+            </button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="relative h-48">
+            <img src="https://picsum.photos/600/400?random=5" alt="数字营销" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-bold text-xl">数字营销</h3>
+              <p class="text-white/80 text-sm">拓展市场增加业务</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">我们通过社交媒体、搜索引擎优化、内容营销等手段，帮助客户拓展市场，增加业务量，实现业务增长。</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                社交媒体营销
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                搜索引擎优化
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                内容营销与运营
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa fa-check text-green-500 mr-2"></i>
+                数据分析与优化
+              </li>
+            </ul>
+            <button class="w-full py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+              了解详情
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 案例展示 -->
+  <section id="cases" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-4">案例展示</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">我们的成功案例，见证客户的品牌成长与业务发展</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="relative">
+            <img src="https://picsum.photos/600/400?random=6" alt="案例一" class="w-full h-64 object-cover">
+            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full">
+              品牌设计
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-gray-800 text-lg mb-2">某知名品牌形象升级</h3>
+            <p class="text-gray-600 mb-4">为某知名品牌进行了全面的形象升级，包括标志设计、VI系统、产品包装等，提升了品牌的现代感和市场竞争力。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-500 text-sm">2024年</span>
+              <button class="text-primary hover:text-primary/80">
+                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="relative">
+            <img src="https://picsum.photos/600/400?random=7" alt="案例二" class="w-full h-64 object-cover">
+            <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-medium px-3 py-1 rounded-full">
+              数字营销
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-gray-800 text-lg mb-2">某企业线上营销活动</h3>
+            <p class="text-gray-600 mb-4">为某企业策划并执行了线上营销活动，通过社交媒体、搜索引擎等渠道进行推广，活动期间品牌曝光量增长300%。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-500 text-sm">2025年</span>
+              <button class="text-primary hover:text-primary/80">
+                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+          <div class="relative">
+            <img src="https://picsum.photos/600/400?random=8" alt="案例三" class="w-full h-64 object-cover">
+            <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-medium px-3 py-1 rounded-full">
+              UI设计
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-gray-800 text-lg mb-2">某APP用户界面设计</h3>
+            <p class="text-gray-600 mb-4">为某金融科技公司设计了全新的APP用户界面，提升了用户体验和界面美观度，用户留存率提高了25%。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-500 text-sm">2024年</span>
+              <button class="text-primary hover:text-primary/80">
+                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="btn-primary">
+          查看更多案例 <i class="fa fa-long-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 业绩数据 -->
+  <section class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2">500+</div>
+          <p class="text-white/80">成功案例</p>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2">300+</div>
+          <p class="text-white/80">长期客户</p>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+          <p class="text-white/80">客户满意度</p>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-bold mb-2">15+</div>
+          <p class="text-white/80">行业经验</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-800 mb-6">联系我们</h2>
+          <p class="text-gray-600 mb-8">
+            无论您有任何问题或需求，都可以通过以下方式联系我们，我们将尽快回复您。
+          </p>
+          
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                <i class="fa fa-map-marker text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">公司地址</h3>
+                <p class="text-gray-600">黑龙江省哈尔滨市南岗区长江路368号</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                <i class="fa fa-phone text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">联系电话</h3>
+                <p class="text-gray-600">0451-88888888</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                <i class="fa fa-envelope text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">电子邮箱</h3>
+                <p class="text-gray-600">info@banmaxianmedia.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                <i class="fa fa-clock-o text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-1">工作时间</h3>
+                <p class="text-gray-600">周一至周五: 9:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+              <i class="fa fa-weixin"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+              <i class="fa fa-weibo"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+              <i class="fa fa-qq"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+              <i class="fa fa-youtube-play"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-6">发送消息</h3>
+            <form>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="name" class="block text-gray-700 font-medium mb-2">姓名</label>
+                  <input type="text" id="name" class="input-field" placeholder="请输入您的姓名">
+                </div>
+                <div>
+                  <label for="phone" class="block text-gray-700 font-medium mb-2">电话</label>
+                  <input type="tel" id="phone" class="input-field" placeholder="请输入您的电话">
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-medium mb-2">邮箱</label>
+                <input type="email" id="email" class="input-field" placeholder="请输入您的邮箱">
+              </div>
+              
+              <div class="mb-6">
+                <label for="subject" class="block text-gray-700 font-medium mb-2">主题</label>
+                <input type="text" id="subject" class="input-field" placeholder="请输入消息主题">
+              </div>
+              
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-medium mb-2">消息内容</label>
+                <textarea id="message" rows="5" class="input-field" placeholder="请输入您的消息内容"></textarea>
+              </div>
+              
+              <button type="submit" class="btn-primary w-full">
+                发送消息 <i class="fa fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <i class="fa fa-paint-brush text-white text-xl"></i>
+            </div>
+            <span class="text-xl font-bold">斑马线传媒</span>
+          </div>
+          <p class="text-gray-400 mb-6">创意无限，传播未来</p>
+          <p class="text-gray-400 mb-6">专注于为企业提供全方位的品牌策划、创意设计和数字营销解决方案</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-weixin text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-weibo text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-qq text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-youtube-play text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-6">快速链接</h3>
+          <ul class="space-y-3">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">公司简介</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">服务项目</a></li>
+            <li>
